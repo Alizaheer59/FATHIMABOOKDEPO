@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatima Book Depot | Serving Faith • Knowledge • Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: '#0B5D3B',
+                        gold: '#D4AF37',
+                        ivory: '#F8F5EE',
+                        darkGreen: '#073D26',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8F5EE; }
+        .islamic-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l5.878 18.09h19.022l-15.389 11.181 5.878 18.09L30 36.18l-15.389 11.181 5.878-18.09L5.1 18.09h19.022L30 0z' fill='%23D4AF37' fill-opacity='0.05'/%3E%3C/svg%3E");
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0B5D3B 0%, #073D26 100%);
+        }
+        .arch-frame {
+            clip-path: ellipse(50% 70% at 50% 50%);
+            border: 4px solid #D4AF37;
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+        .section-arch {
+            position: relative;
+            padding-top: 4rem;
+        }
+        .section-arch::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 50px;
+            background: #D4AF37;
+            clip-path: path("M 0 50 Q 50 0 100 50 Z");
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #073D26; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 10px; }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <nav class="sticky top-0 z-50 bg-emerald text-white border-b border-gold/30 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center p-1">
+                    <img src="https://placehold.co/100x100/0B5D3B/D4AF37?text=FBD" alt="Fatima Book Depot Logo" class="w-full h-full object-contain">
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold font-serif tracking-wide text-gold">FATIMA BOOK DEPOT</h1>
+                    <p class="text-[10px] uppercase tracking-[0.2em] text-ivory/80">Serving Faith • Knowledge • Community</p>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                <a href="#about" class="hover:text-gold transition">About</a>
+                <a href="#founder" class="hover:text-gold transition">Founder</a>
+                <a href="#products" class="hover:text-gold transition">Products</a>
+                <a href="#contact" class="bg-gold px-4 py-2 rounded text-emerald font-bold gold-glow transition">Visit Store</a>
+            </div>
+            <button class="md:hidden text-gold text-2xl" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darkGreen border-t border-gold/20 py-4 px-6 flex flex-col space-y-4 font-medium text-sm">
+            <a href="#about" class="hover:text-gold transition" onclick="toggleMobileMenu()">About</a>
+            <a href="#founder" class="hover:text-gold transition" onclick="toggleMobileMenu()">Founder</a>
+            <a href="#products" class="hover:text-gold transition" onclick="toggleMobileMenu()">Products</a>
+            <a href="#contact" class="bg-gold inline-block px-4 py-2 text-center rounded text-emerald font-bold transition" onclick="toggleMobileMenu()">Visit Store</a>
+        </div>
+    </nav>
+
+    <section class="relative hero-gradient text-white overflow-hidden py-16 md:py-24">
+        <div class="absolute inset-0 islamic-pattern opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="text-center md:text-left space-y-6">
+                <div class="flex justify-center md:justify-start mb-4">
+                    <img src="https://placehold.co/300x120/0B5D3B/D4AF37?text=FATIMA+BOOK+DEPOT" alt="Fatima Book Depot Logo" class="h-24 md:h-32 object-contain filter drop-shadow-lg">
+                </div>
+                <h2 class="text-4xl md:text-6xl font-serif font-bold leading-tight">
+                    Your Trusted Destination for <span class="text-gold">Islamic Books</span>, Religious Essentials & Gift Items
+                </h2>
+                <p class="text-lg text-ivory/80 max-w-xl">
+                    Providing authentic Islamic books, prayer essentials, attars, clothing, gift collections and community products for families across Tuni and surrounding areas.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
+                    <a href="#products" class="bg-gold hover:bg-white text-emerald font-bold px-6 py-3 rounded-xl shadow-lg transition">Explore Products</a>
+                    <a href="tel:8341986516" class="bg-emerald/50 border border-gold/40 hover:bg-emerald text-white font-bold px-6 py-3 rounded-xl shadow-lg transition"><i class="fas fa-phone-alt mr-2 text-gold"></i>Call Now</a>
+                    <a href="https://wa.me/8341986516" class="bg-[#25D366] hover:brightness-110 text-white font-bold px-6 py-3 rounded-xl shadow-lg flex items-center transition"><i class="fab fa-whatsapp mr-2 text-xl"></i>WhatsApp</a>
+                </div>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-8 border-t border-gold/20">
+                    <div class="flex items-center space-x-2 text-sm text-ivory/70">
+                        <i class="fas fa-check-circle text-gold"></i> <span>Trusted Imam Led</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-ivory/70">
+                        <i class="fas fa-check-circle text-gold"></i> <span>Authentic Products</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-ivory/70">
+                        <i class="fas fa-check-circle text-gold"></i> <span>Wholesale & Retail</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-ivory/70">
+                        <i class="fas fa-check-circle text-gold"></i> <span>10+ Years Service</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative flex justify-center">
+                <div class="relative w-72 h-96 md:w-80 md:h-[450px]">
+                    <div class="arch-frame w-full h-full bg-emerald overflow-hidden shadow-2xl relative">
+                        <img src="https://placehold.co/600x800/073D26/D4AF37?text=Luxury+Islamic+Books" alt="Islamic Essentials" class="w-full h-full object-cover brightness-75 hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald/80 to-transparent"></div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 border-r-4 border-b-4 border-gold opacity-50"></div>
+                    <div class="absolute -top-6 -left-6 w-32 h-32 border-l-4 border-t-4 border-gold opacity-50"></div>
+                    
+                    <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-gold text-emerald px-6 py-2 rounded-full font-bold shadow-xl whitespace-nowrap">
+                        Premium Quality
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-ivory section-arch">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-3xl md:text-4xl font-serif font-bold text-emerald mb-6">A Store Built on Faith, Knowledge & Service</h3>
+            <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+            <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+                <p>Fatima Book Depot is a trusted Islamic retail store located near Jama Masjid, Tuni. We provide authentic Islamic books, Quran Majeed, Panj Surah, prayer essentials, attars, traditional clothing, gift collections and community products.</p>
+                <p>Our goal is to make Islamic knowledge and essential products easily accessible while maintaining honesty, trust, quality and service. Every product we offer is carefully selected to support learning, worship and daily Islamic living.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="founder" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-emerald rounded-[3rem] p-8 md:p-16 text-white shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+                
+                <div class="flex flex-col lg:flex-row items-center gap-12 relative z-10">
+                    <div class="shrink-0">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-gold p-2 shadow-inner overflow-hidden">
+                            <img 
+                                src="https://drive.google.com/uc?export=view&id=1ScaMvsmgLIcM-fDHziSQT_uJnI2hHzhU" 
+                                alt="Hafiz Md Kabiruddin Razvi - Founder" 
+                                class="w-full h-full object-cover rounded-full transition-transform duration-500 hover:scale-105"
+                                onerror="this.src='https://placehold.co/400x400/D4AF37/0B5D3B?text=Hafiz+Razvi'"
+                            >
+                        </div>
+                    </div>
+                    <div class="flex-1 space-y-6">
+                        <div>
+                            <h4 class="text-3xl md:text-5xl font-serif font-bold text-gold">Hafiz Md Kabiruddin Razvi</h4>
+                            <p class="text-xl text-ivory font-semibold mt-2">Founder & Proprietor | Imam – Jama Masjid Tuni</p>
+                        </div>
+                        <p class="text-ivory/90 text-lg">
+                            Hafiz Md Kabiruddin Razvi is a respected Hafiz-e-Quran, Imam, Islamic educator and community guide who has been serving the people of Tuni for more than 10 years. Known for his dedication towards Deen, Islamic education and community welfare, he has guided countless individuals and families through his teachings, counseling and service.
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-center space-x-3 bg-darkGreen/50 p-3 rounded-xl border border-gold/20">
+                                <i class="fas fa-quran text-gold"></i>
+                                <span>Hafiz-e-Quran</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-darkGreen/50 p-3 rounded-xl border border-gold/20">
+                                <i class="fas fa-mosque text-gold"></i>
+                                <span>Trusted Imam of Jama Masjid Tuni</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-darkGreen/50 p-3 rounded-xl border border-gold/20">
+                                <i class="fas fa-users text-gold"></i>
+                                <span>10+ Years Community Service</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-darkGreen/50 p-3 rounded-xl border border-gold/20">
+                                <i class="fas fa-hands-holding text-gold"></i>
+                                <span>Islamic Educator & Mentor</span>
+                            </div>
+                            <div class="flex items-center space-x-3 bg-darkGreen/50 p-3 rounded-xl border border-gold/20 md:col-span-2">
+                                <i class="fas fa-heart text-gold"></i>
+                                <span>Dedicated to Deen and Community Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-20 bg-ivory">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-serif font-bold text-emerald">Our Premium Collections</h3>
+                <p class="text-gray-600 mt-2">Curated essentials for your spiritual journey</p>
+                <div class="w-20 h-1 bg-gold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Section 1 -->
+                <div class="bg-white p-8 rounded-2xl border-t-4 border-gold shadow-md hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 bg-emerald/10 rounded-full flex items-center justify-center text-emerald text-2xl mb-6 group-hover:bg-emerald group-hover:text-gold transition-colors">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-emerald">Islamic Books & Learning</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Quran Majeed</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Panj Surah</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Islamic Literature</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Arabic Learning Books</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Rehal (Quran Stand)</li>
+                    </ul>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="bg-white p-8 rounded-2xl border-t-4 border-gold shadow-md hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 bg-emerald/10 rounded-full flex items-center justify-center text-emerald text-2xl mb-6 group-hover:bg-emerald group-hover:text-gold transition-colors">
+                        <i class="fas fa-pray"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-emerald">Prayer Essentials</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Janamaz & Tasbih</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Topi & Surma</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Miswak</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Arabi Rumal</li>
+                    </ul>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="bg-white p-8 rounded-2xl border-t-4 border-gold shadow-md hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 bg-emerald/10 rounded-full flex items-center justify-center text-emerald text-2xl mb-6 group-hover:bg-emerald group-hover:text-gold transition-colors">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-emerald">Traditional Clothing</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Burqua & Hijabs</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Dupatta & Scarves</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Chadar & Pagdi</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Ghungat</li>
+                    </ul>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="bg-white p-8 rounded-2xl border-t-4 border-gold shadow-md hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 bg-emerald/10 rounded-full flex items-center justify-center text-emerald text-2xl mb-6 group-hover:bg-emerald group-hover:text-gold transition-colors">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-emerald">Attars & Fragrances</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Premium Attars</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Roll-On Perfumes</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Traditional Fragrances</li>
+                    </ul>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="bg-white p-8 rounded-2xl border-t-4 border-gold shadow-md hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 bg-emerald/10 rounded-full flex items-center justify-center text-emerald text-2xl mb-6 group-hover:bg-emerald group-hover:text-gold transition-colors">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-emerald">Gift Collection</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Marriage Gifts</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Festival Gifts</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Islamic Home Decor</li>
+                    </ul>
+                </div>
+
+                <!-- Section 6 -->
+                <div class="bg-white p-8 rounded-2xl border-t-4 border-gold shadow-md hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 bg-emerald/10 rounded-full flex items-center justify-center text-emerald text-2xl mb-6 group-hover:bg-emerald group-hover:text-gold transition-colors">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-emerald">Community Essentials</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Kafan Dafan Items</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Islamic Flags</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Ayurvedic Products</li>
+                        <li><i class="fas fa-chevron-right text-gold mr-2 text-xs"></i> Religious Accessories</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-darkGreen text-white relative">
+        <div class="absolute inset-0 islamic-pattern opacity-5"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <h3 class="text-3xl md:text-4xl font-serif font-bold text-gold text-center mb-12">Why Choose Fatima Book Depot?</h3>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-emerald/40 rounded-2xl border border-gold/20 hover:border-gold transition-all">
+                    <div class="text-4xl text-gold mb-4"><i class="fas fa-award"></i></div>
+                    <h5 class="text-lg font-bold mb-2">Authentic Products</h5>
+                </div>
+                <div class="text-center p-6 bg-emerald/40 rounded-2xl border border-gold/20 hover:border-gold transition-all">
+                    <div class="text-4xl text-gold mb-4"><i class="fas fa-store"></i></div>
+                    <h5 class="text-lg font-bold mb-2">Wholesale & Retail</h5>
+                </div>
+                <div class="text-center p-6 bg-emerald/40 rounded-2xl border border-gold/20 hover:border-gold transition-all">
+                    <div class="text-4xl text-gold mb-4"><i class="fas fa-tag"></i></div>
+                    <h5 class="text-lg font-bold mb-2">Reasonable Pricing</h5>
+                </div>
+                <div class="text-center p-6 bg-emerald/40 rounded-2xl border border-gold/20 hover:border-gold transition-all">
+                    <div class="text-4xl text-gold mb-4"><i class="fas fa-comments"></i></div>
+                    <h5 class="text-lg font-bold mb-2">Personalized Guidance</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-ivory">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <h3 class="text-3xl font-serif font-bold text-emerald mb-8">Store Gallery</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://placehold.co/400x300/0B5D3B/F8F5EE?text=Store+Interior" class="rounded-xl shadow-lg h-40 w-full object-cover">
+                        <img src="https://placehold.co/400x300/D4AF37/0B5D3B?text=Islamic+Books" class="rounded-xl shadow-lg h-40 w-full object-cover">
+                        <img src="https://placehold.co/400x300/0B5D3B/F8F5EE?text=Attar+Collection" class="rounded-xl shadow-lg h-40 w-full object-cover">
+                        <img src="https://placehold.co/400x300/D4AF37/0B5D3B?text=Prayer+Essentials" class="rounded-xl shadow-lg h-40 w-full object-cover">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-serif font-bold text-emerald mb-8">Community Voices</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl border-l-4 border-gold shadow-md italic">
+                            <div class="flex text-gold mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="text-gray-600">"Trusted products and excellent service. We always visit Fatima Book Depot for our family's Islamic needs."</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border-l-4 border-gold shadow-md italic">
+                            <div class="flex text-gold mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="text-gray-600">"A reliable store with authentic books and quality prayer essentials."</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border-l-4 border-gold shadow-md italic">
+                            <div class="flex text-gold mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="text-gray-600">"Excellent guidance, genuine products and respectful service."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 hero-gradient relative">
+        <div class="absolute inset-0 islamic-pattern opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h3 class="text-3xl md:text-5xl font-serif font-bold text-gold mb-6 tracking-wide">VISIT FATIMA BOOK DEPOT TODAY</h3>
+            <p class="text-xl text-ivory/90 mb-10">Experience quality products, authentic Islamic resources and trusted service under one roof.</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="tel:8341986516" class="flex items-center space-x-2 bg-gold text-emerald px-8 py-4 rounded-full font-bold hover:bg-white transition-all">
+                    <i class="fas fa-phone-alt"></i> <span>Call Now</span>
+                </a>
+                <a href="https://wa.me/8341986516" class="flex items-center space-x-2 bg-green-600 text-white px-8 py-4 rounded-full font-bold hover:bg-green-500 transition-all">
+                    <i class="fab fa-whatsapp"></i> <span>WhatsApp Us</span>
+                </a>
+                <a href="https://share.google/semZHWfSdFXIxCqC9" target="_blank" class="flex items-center space-x-2 bg-white text-emerald px-8 py-4 rounded-full font-bold hover:bg-gold transition-all">
+                    <i class="fas fa-map-marker-alt"></i> <span>Get Directions</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-3xl font-serif font-bold text-emerald mb-2">Fatima Book Depot</h3>
+                        <p class="text-gold font-bold uppercase tracking-widest text-sm">Wholesale & Retail</p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-ivory rounded-full flex items-center justify-center text-gold shrink-0 border border-gold/20">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Founder</p>
+                                <p class="text-lg font-bold">Hafiz Md Kabiruddin Razvi</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-ivory rounded-full flex items-center justify-center text-gold shrink-0 border border-gold/20">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Address</p>
+                                <p class="text-lg">Near Jama Masjid, Tuni, Andhra Pradesh</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-ivory rounded-full flex items-center justify-center text-gold shrink-0 border border-gold/20">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Phone / WhatsApp</p>
+                                <p class="text-lg font-bold">8341986516</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MAP EMBED -->
+                <div class="h-96 w-full rounded-3xl border-[6px] border-gold overflow-hidden shadow-2xl relative">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15234.332306788878!2d82.5350!3d17.3550!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39f60f6c2f5471%3A0x7d6a455a7201c137!2sJama%20Masjid%20Tuni!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                    <div class="absolute bottom-4 left-4 bg-emerald text-white px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-2 shadow-lg">
+                        <i class="fas fa-map-pin text-gold"></i> Find us near Jama Masjid
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-darkGreen text-white py-12 border-t border-gold/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2 space-y-4">
+                    <h4 class="text-2xl font-serif font-bold text-gold">FATIMA BOOK DEPOT</h4>
+                    <p class="text-ivory/60 max-w-sm">Serving the community with authentic Islamic knowledge and essential religious items for over a decade.</p>
+                    <div class="flex space-x-4 pt-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-emerald flex items-center justify-center hover:bg-gold hover:text-emerald transition-all"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/8341986516" class="w-10 h-10 rounded-full bg-emerald flex items-center justify-center hover:bg-gold hover:text-emerald transition-all"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-emerald flex items-center justify-center hover:bg-gold hover:text-emerald transition-all"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="text-gold font-bold mb-6">Quick Links</h5>
+                    <ul class="space-y-3 text-ivory/80">
+                        <li><a href="#" class="hover:text-gold transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-gold transition">About Founder</a></li>
+                        <li><a href="#products" class="hover:text-gold transition">Products</a></li>
+                        <li><a href="#contact" class="hover:text-gold transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-gold font-bold mb-6">Visit Us</h5>
+                    <p class="text-ivory/80">Jama Masjid Area,<br>Tuni, Andhra Pradesh</p>
+                    <p class="mt-4 text-gold font-bold">8341986516</p>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-emerald/50 text-center text-sm text-ivory/40">
+                <p>Copyright © 2026 Fatima Book Depot. All Rights Reserved.</p>
+                <p class="mt-1">Proprietor: Hafiz Md Kabiruddin Razvi</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile responsive menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
